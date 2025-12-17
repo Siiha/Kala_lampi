@@ -2,7 +2,6 @@ package Kala_lampi;
 public class Kala  extends Elio {
     private double koko;
     public Kala(double koko) {
-        super(koko);
         this.koko = koko;
     }
     public void syo(Elio saalis) {
