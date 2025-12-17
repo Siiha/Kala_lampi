@@ -32,4 +32,8 @@ public class Kalastaja {
     public void valitseViehe(Viehe viehe) {
         this.viehe = viehe;
     }
+
+    public void kalasta() {
+        
+    }
 }
