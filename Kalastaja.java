@@ -1,5 +1,7 @@
 package Kala_lampi;
 
+import java.util.ArrayList;
+
 public class Kalastaja {
     /*
     Muuttuja kalastajan valitsemalle vieheelle.
@@ -33,7 +35,21 @@ public class Kalastaja {
         this.viehe = viehe;
     }
 
-    public void kalasta() {
-        
+    /*
+    Yrittää kalastaa parametrinä annetusta listasta kalan.
+    Kiinnijäädessä saalis lisätään Saalisraporttiin.
+
+    AE: kalalista != null && onkoKuollut() == false
+    */
+    public void kalasta(ArrayList<Kala> kalalista) {
+        if (kalalista != null) {
+            int rng = (int)(Math.random() * kalalista.size());
+            Kala eräs = kalalista.get(rng);
+            if (!eräs.onkoKuollut()) {
+                if (viehe.jaikoKiinni(eräs)) {
+                    raportti.lisaaSaalis(eräs);
+                }
+            }
+        }
     }
 }
