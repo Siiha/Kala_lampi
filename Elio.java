@@ -12,4 +12,7 @@ public class Elio {
         this.koko += k.annettuKoko()/2;
         k.pienene(maara);
     }
+    public boolean onkoKuollut() {
+        return kuollut;
+    }
 }
