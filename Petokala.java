@@ -1,7 +1,6 @@
 package Kala_lampi;
 public class Petokala extends Kala {
     private double saalistusTeho;
-
     public Petokala(double koko, double saalistusTeho) {
         super(koko);
         this.saalistusTeho = saalistusTeho;
@@ -11,4 +10,5 @@ public class Petokala extends Kala {
         if (saalis.annettuKoko() < this.saalistusTeho) {
             saalis.kuole();
     }
+}
 }

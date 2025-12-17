@@ -8,5 +8,8 @@ public class elio {
     public void kuole() {
         this = null;
     }
+    public void syo(Kasvi k,double maara) {
+        this.koko += k.annettuKoko();
+        k.pienene(maara);}
 }
 }
