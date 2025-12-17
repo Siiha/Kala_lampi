@@ -8,10 +8,6 @@ public class elio {
     public double annettuKoko() {
         return this.koko;
     }
-    public void kuole() {
-        this.koko = 0;
-
-    }
     public void syo(Kasvi k,double maara) {
         this.koko += k.annettuKoko();
         k.pienene(maara);
