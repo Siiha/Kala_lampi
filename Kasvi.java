@@ -8,4 +8,13 @@ public class Kasvi {
     public void kasva() {
         this.koko += kasvuNopeus;
     }
+    public double annettuKoko() {
+        return this.koko;
+    }
+    public void pienene(double maara) {
+        this.koko -= maara;
+        if (this.koko < 0) {
+            this.koko = 0;
+        }
+    }
 }

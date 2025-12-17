@@ -1,8 +1,11 @@
 package Kala_lampi;
-public class Kala {
-    private double koko;
+public class Kala  extends elio {
     public Kala(double koko) {
-        this.koko = koko;
+        super();
     }
-
-}
+    public void syo(elio saalis) {
+        if (saalis.annettuKoko() < this.annettuKoko()) {
+            saalis.kuole();
+        }
+    }
+    
