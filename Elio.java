@@ -9,7 +9,7 @@ public class elio {
         return this.koko;
     }
     public void syo(Kasvi k,double maara) {
-        this.koko += k.annettuKoko();
+        this.koko += k.annettuKoko()/2;
         k.pienene(maara);
     }
 }
