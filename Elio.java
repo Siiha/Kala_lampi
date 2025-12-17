@@ -1,5 +1,6 @@
 package Kala_lampi;
 public class elio {
+    public boolean kuollut=false;
     private double koko;
     public elio(double koko) {
         this.koko = koko;
@@ -7,12 +8,8 @@ public class elio {
     public double annettuKoko() {
         return this.koko;
     }
-    public void kuole() {
-        this.koko = 0;
-        
-    }
     public void syo(Kasvi k,double maara) {
-        this.koko += k.annettuKoko();
+        this.koko += k.annettuKoko()/2;
         k.pienene(maara);
     }
 }
