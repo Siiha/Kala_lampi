@@ -2,6 +2,7 @@ package Kala_lampi;
 public class Kasvi {
     private double koko;
     private double kasvuNopeus;
+    private doolean kuollut=false; 
     public Kasvi(double koko) {
         this.koko = koko;
     }
@@ -14,7 +15,7 @@ public class Kasvi {
     public void pienene(double maara) {
         this.koko -= maara;
         if (this.koko < 0) {
-            this.koko = 0;
+            this.kuollut = true;
         }
     }
 }
