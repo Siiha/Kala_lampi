@@ -3,13 +3,16 @@ public class elio {
     private double koko;
     public elio(double koko) {
         this.koko = koko;
+    }
     public double annettuKoko() {
-        return this.koko;}
+        return this.koko;
+    }
     public void kuole() {
-        this = null;
+        this.koko = 0;
+        
     }
     public void syo(Kasvi k,double maara) {
         this.koko += k.annettuKoko();
-        k.pienene(maara);}
-}
+        k.pienene(maara);
+    }
 }

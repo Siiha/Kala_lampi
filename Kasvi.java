@@ -14,7 +14,7 @@ public class Kasvi {
     public void pienene(double maara) {
         this.koko -= maara;
         if (this.koko < 0) {
-            this = null;
+            this.koko = 0;
         }
     }
 }
