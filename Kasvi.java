@@ -1,3 +1,4 @@
+package Kala_lampi;
 public class Kasvi {
     private double koko;
     private double kasvuNopeus;
