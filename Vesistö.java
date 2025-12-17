@@ -18,6 +18,9 @@ public class Vesistö {
     */
     private ArrayList<Elio> eliöt;
 
+
+    // Kyseenalainen konstruktorin toteutusidea.
+
     /*
     Luokan konstruktori.
     Ottaa vastaan parametreinä luotavien olioiden määrät.
@@ -30,5 +33,36 @@ public class Vesistö {
         eliöt = new ArrayList<>();
         kasvit = new ArrayList<>();
         kalat = new ArrayList<>();
+    }
+
+    // onkoKuollut() & olionAktiviteetti() placeholder nimet.
+
+    /*
+    Edistää olioiden tilaa eteenpäin.
+    Ottaa vastaan parametrinä listan olioita.
+
+    AE: onkoKuollut() != true
+    */
+    private void olioidenAktiviteetti(ArrayList oliolista) {
+        for (int counter = 0; counter < oliolista.size(); counter++) {
+            if (!oliolista.get(counter).onkoKuollut()) {
+                oliolista.get(counter).olionAktiviteetti();
+            }
+        }
+    }
+
+    /*
+    Simulaatio siirtyy eteenpäin.
+    
+    Ottaa vastaan parametrinä kuukausien määrän.
+
+    AE: true
+    */
+    public void eteneSimulaatiota(int kuukausiMäärä) {
+        for (int counter = 0; counter < kuukausiMäärä; counter++) {
+            olioidenAktiviteetti(eliöt);
+            olioidenAktiviteetti(kalat);
+            olioidenAktiviteetti(kasvit);
+        }
     }
 }
