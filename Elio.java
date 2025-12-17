@@ -1,8 +1,8 @@
 package Kala_lampi;
-public class elio {
+public class Elio {
     public boolean kuollut=false;
     private double koko;
-    public elio(double koko) {
+    public Elio(double koko) {
         this.koko = koko;
     }
     public double annettuKoko() {

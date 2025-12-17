@@ -2,7 +2,7 @@ package Kala_lampi;
 public class Kasvi {
     private double koko;
     private double kasvuNopeus;
-    private doolean kuollut=false; 
+    private boolean kuollut=false; 
     public Kasvi(double koko) {
         this.koko = koko;
     }
