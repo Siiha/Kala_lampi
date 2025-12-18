@@ -1,6 +1,7 @@
 
 package Kala_lampi;
-import Java.util.ArrayList,Java.util.Random;
+import java.util.ArrayList;
+import java.util.Random;
 public class Kasvi {
     private double koko;
     private double kasvuNopeus;

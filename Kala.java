@@ -1,7 +1,8 @@
 package Kala_lampi;
-import Java.util.ArrayList,Java.util.Random;
+import java.util.ArrayList;
+import java.util.Random;
 public class Kala  extends Elio {
-    ArrayList<Elio> saaliit; // lista mahdollisista eliöistä joita kala voi syödä
+    protected ArrayList<Elio> saaliit; // lista mahdollisista eliöistä joita kala voi syödä
     public Kala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit) {
         super(koko, sukupuoli);
         this.saaliit = saaliit;
