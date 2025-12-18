@@ -6,17 +6,17 @@ public class Vesistö {
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
-    private ArrayList<Kuolevainen> kalat;
+    private ArrayList<Kala> kalat;
 
     /*
     Muuttuja kasvien listalle.
     */
-    private ArrayList<Kuolevainen> kasvit;
+    private ArrayList<Kasvi> kasvit;
 
     /*
     Muuttuja eliöiden listalle.
     */
-    private ArrayList<Kuolevainen> eliöt;
+    private ArrayList<Elio> eliöt;
 
 
     // Kyseenalainen konstruktorin toteutusidea.
@@ -60,9 +60,7 @@ public class Vesistö {
     */
     public void eteneSimulaatiota(int kuukausiMäärä) {
         for (int counter = 0; counter < kuukausiMäärä; counter++) {
-            olioidenAktiviteetti(eliöt);
-            olioidenAktiviteetti(kalat);
-            olioidenAktiviteetti(kasvit);
+            
         }
     }
 }
