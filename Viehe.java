@@ -2,14 +2,9 @@ package Kala_lampi;
 
 public class Viehe {
     /*
-    Todennäköisyys saaliskalan kiinnijäämiseen.
+    Todennäköisyys saaliskalan ja petokalan kiinnijäämiseen.
     */
-    protected int saaliskalaChance;
-    /*
-    Todennäköisyys petokalan kiinnijäämiseen.
-    */
-    protected int petokalaChance;
-
+    protected int saaliskalaChance,petokalaChance;
     /*
     Vieheen konstruktori.
 
