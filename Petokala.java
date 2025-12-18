@@ -4,9 +4,10 @@ import java.util.ArrayList;
 public class Petokala extends Kala {
     private static double minAlkuKoko = 12.0;
     private static double maxAlkuKoko = 15.0;
-    private double saalistusTeho = 10.0;
-    public Petokala(double koko, boolean sukupuoli, double saalistusTeho, ArrayList<Kuolevainen> saaliit) {
+    private double saalistusTeho;
+    public Petokala(double koko, boolean sukupuoli, ArrayList<Kuolevainen> saaliit, ArrayList<Kuolevainen> Kala_saaliit, double saalistusTeho) {
         super(koko,sukupuoli, saaliit);
+        this.saaliit.addAll(Kala_saaliit);
         this.saalistusTeho = saalistusTeho;
     }
 
@@ -23,8 +24,8 @@ public class Petokala extends Kala {
         return Math.round(koko * 10.0) / 10.0;
     }
 
-    public static Petokala luoPetokala(ArrayList<Kuolevainen> saalisLista) {
-        Petokala kala = new Petokala(elionKoko(), elionSukupuoli(), 10.0,  saalisLista);
+    public static Petokala luoPetokala(ArrayList<Kuolevainen> saalisLista, ArrayList<Kuolevainen> saaliit) {
+        Petokala kala = new Petokala(elionKoko(), elionSukupuoli(), saalisLista, saaliit, 10.0);
         return kala;
     }
     public void saalista(Kala saalis) {

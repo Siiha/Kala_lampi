@@ -2,14 +2,14 @@ package Kala_lampi;
 
 import java.util.ArrayList;
 public class Elio implements Kuolevainen{
-    protected boolean kuollut=false;
-    private double koko;
-    private boolean sukupuoli; // true = naaras, false = uros
+    public boolean kuollut=false;
+    protected double koko;
+    protected boolean sukupuoli; // true = naaras, false = uros
     protected ArrayList<Kuolevainen> saaliit;
     private static double minAlkuKoko = 5.0;
     private static double maxAlkuKoko = 7.0;
 
-    protected Elio(double koko, boolean sukupuoli, ArrayList<Kuolevainen> saaliit) {
+    public Elio(double koko, boolean sukupuoli, ArrayList<Kuolevainen> saaliit) {
         this.koko = koko;
         this.sukupuoli = sukupuoli;
         this.saaliit = saaliit;
