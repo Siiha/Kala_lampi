@@ -1,8 +1,8 @@
 package Kala_lampi;
 public class Petokala extends Kala {
     private double saalistusTeho;
-    public Petokala(double koko, double saalistusTeho) {
-        super(koko);
+    public Petokala(double koko, boolean sukupuoli, double saalistusTeho) {
+        super(koko,sukupuoli);
         this.saalistusTeho = saalistusTeho;
     }
 
