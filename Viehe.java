@@ -4,11 +4,11 @@ public class Viehe {
     /*
     Todennäköisyys saaliskalan kiinnijäämiseen.
     */
-    private int saaliskalaChance;
+    protected int saaliskalaChance;
     /*
     Todennäköisyys petokalan kiinnijäämiseen.
     */
-    private int petokalaChance;
+    protected int petokalaChance;
 
     /*
     Vieheen konstruktori.
