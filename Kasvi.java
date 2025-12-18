@@ -9,14 +9,14 @@ public class Kasvi {
     public Kasvi(double koko) {
         this.koko = koko;
     }
-    public void kasva(ArrayList<Kala> Kuolleet_kalat) {
-        int Kks = Kuolleet_kalat.size();
+    public void kasva(ArrayList<Elio> Kuolleet) {
+        int Kks = Kuolleet.size();
         if (Kks > 0){
             Random rd = new Random();
             int id = rd.nextInt(Kks); 
-            Kala kala = Kuolleet_kalat.get(id);
-            this.koko += kala.annettuKoko() / 10;
-            Kuolleet_kalat.remove(id);
+            Elio elio = Kuolleet.get(id);
+            this.koko += elio.annettuKoko() / 10;
+            Kuolleet.remove(id);
         }
     }
     public double annettuKoko() {
