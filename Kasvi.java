@@ -2,7 +2,7 @@
 package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
-public class Kasvi {
+public class Kasvi implements Kuolevainen {
     private double koko;
     private double kasvuNopeus;
     private boolean kuollut=false;
