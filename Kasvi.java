@@ -1,13 +1,23 @@
+
 package Kala_lampi;
-public class Kasvi implements Kuolevainen{
+import java.util.ArrayList;
+import java.util.Random;
+public class Kasvi {
     private double koko;
     private double kasvuNopeus;
-    private boolean kuollut=false; 
+    private boolean kuollut=false;
     public Kasvi(double koko) {
         this.koko = koko;
     }
-    public void kasva() {
-        this.koko += kasvuNopeus;
+    public void kasva(ArrayList<Elio> Kuolleet) {
+        int Kks = Kuolleet.size();
+        if (Kks > 0){
+            Random rd = new Random();
+            int id = rd.nextInt(Kks); 
+            Elio elio = Kuolleet.get(id);
+            this.koko += elio.annettuKoko() / 10;
+            Kuolleet.remove(id);
+        }
     }
     public double annettuKoko() {
         return this.koko;

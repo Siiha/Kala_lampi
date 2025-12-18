@@ -1,8 +1,8 @@
 package Kala_lampi;
-public class Elio implements Kuolevainen{
-    protected boolean kuollut=false;
-    private double koko;
-    private boolean sukupuoli; // true = naaras, false = uros
+public class Elio {
+    public boolean kuollut=false;
+    protected double koko;
+    protected boolean sukupuoli; // true = naaras, false = uros
     public Elio(double koko, boolean sukupuoli) {
         this.koko = koko;
         this.sukupuoli = sukupuoli;
