@@ -11,4 +11,9 @@ public interface Kuolevainen {
     Objektin aktiviteetin toteutus aikayksikön sisällä.
     */
     public void olionAktiviteetti();
+
+    /*
+    Objekti kuolee
+    */
+    public void kuole();
 }

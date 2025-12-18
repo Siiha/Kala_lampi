@@ -15,7 +15,7 @@ public class Kasvi implements Kuolevainen{
     public void pienene(double maara) {
         this.koko -= maara;
         if (this.koko < 0) {
-            this.kuollut = true;
+            kuole();
         }
     }
     public boolean onkoKuollut() {
@@ -23,5 +23,10 @@ public class Kasvi implements Kuolevainen{
     }
     public void olionAktiviteetti() {
         
+    }
+    public void kuole() {
+        if (kuollut == false) {
+            kuollut = true;
+        }
     }
 }

@@ -1,6 +1,6 @@
 package Kala_lampi;
 public class Elio implements Kuolevainen{
-    public boolean kuollut=false;
+    protected boolean kuollut=false;
     private double koko;
     public Elio(double koko) {
         this.koko = koko;
@@ -17,5 +17,10 @@ public class Elio implements Kuolevainen{
     }
     public void olionAktiviteetti() {
         
+    }
+    public void kuole() {
+        if (kuollut == false) {
+            kuollut = true;
+        }
     }
 }
