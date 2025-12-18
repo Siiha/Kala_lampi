@@ -18,8 +18,10 @@ public class Vesistö {
     */
     private ArrayList<Kuolevainen> eliöt;
 
-
-    // Kyseenalainen konstruktorin toteutusidea.
+    /*
+    Muuttuja vesistön kalastajalle.
+    */
+    private Kalastaja kalastaja;
 
     /*
     Luokan konstruktori.
@@ -30,12 +32,26 @@ public class Vesistö {
     AE: true
     */
     public Vesistö(int elio, int kasvi, int kala, int petokala) {
+        kalastaja = new Kalastaja();
         eliöt = new ArrayList<>();
         kasvit = new ArrayList<>();
         kalat = new ArrayList<>();
-    }
+        for (int counter = 0; counter < elio; counter++) {
+            Elio eräs = Elio.luoElio(kasvit);
+            eliöt.add(eräs);
+        }
+        for (int counter = 0; counter < kasvi; counter++) {
 
-    // onkoKuollut() & olionAktiviteetti() placeholder nimet.
+        }
+        for (int counter = 0; counter < kala; counter++) {
+            Kala eräs = Kala.luoKala(eliöt);
+            kalat.add(eräs);
+        }
+        for (int counter = 0; counter < petokala; counter++) {
+            Petokala eräs = Petokala.luoPetokala(kalat);
+            kalat.add(eräs);
+        }
+    }
 
     /*
     Edistää olioiden tilaa eteenpäin.
