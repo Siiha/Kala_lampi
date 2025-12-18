@@ -6,17 +6,17 @@ public class Vesistö {
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
-    private ArrayList<Kala> kalat;
+    private ArrayList<Kuolevainen> kalat;
 
     /*
     Muuttuja kasvien listalle.
     */
-    private ArrayList<Kasvi> kasvit;
+    private ArrayList<Kuolevainen> kasvit;
 
     /*
     Muuttuja eliöiden listalle.
     */
-    private ArrayList<Elio> eliöt;
+    private ArrayList<Kuolevainen> eliöt;
 
 
     // Kyseenalainen konstruktorin toteutusidea.
@@ -43,7 +43,7 @@ public class Vesistö {
 
     AE: onkoKuollut() != true
     */
-    private void olioidenAktiviteetti(ArrayList oliolista) {
+    private void olioidenAktiviteetti(ArrayList<Kuolevainen> oliolista) {
         for (int counter = 0; counter < oliolista.size(); counter++) {
             if (!oliolista.get(counter).onkoKuollut()) {
                 oliolista.get(counter).olionAktiviteetti();

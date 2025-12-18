@@ -2,14 +2,9 @@ package Kala_lampi;
 
 public class Viehe {
     /*
-    Todennäköisyys saaliskalan kiinnijäämiseen.
+    Todennäköisyys saaliskalan ja petokalan kiinnijäämiseen.
     */
-    private int saaliskalaChance;
-    /*
-    Todennäköisyys petokalan kiinnijäämiseen.
-    */
-    private int petokalaChance;
-
+    protected int saaliskalaChance,petokalaChance;
     /*
     Vieheen konstruktori.
 
@@ -32,11 +27,11 @@ public class Viehe {
         if (eräsKala != null) {
             int rng = (int)(Math.random() * 101);
             if (eräsKala.getClass().getSimpleName().equals("Petokala")) {
-                if (rng >= petokalaChance) {
+                if (rng <= petokalaChance) {
                     return true;
                 }
             } else {
-                if (rng >= saaliskalaChance) {
+                if (rng <= saaliskalaChance) {
                     return true;
                 }
             }

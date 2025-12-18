@@ -1,6 +1,6 @@
 package Kala_lampi;
-public class Elio {
-    public boolean kuollut=false;
+public class Elio implements Kuolevainen{
+    protected boolean kuollut=false;
     private double koko;
     private boolean sukupuoli; // true = naaras, false = uros
     public Elio(double koko, boolean sukupuoli) {
@@ -16,5 +16,13 @@ public class Elio {
     }
     public boolean onkoKuollut() {
         return kuollut;
+    }
+    public void olionAktiviteetti() {
+        
+    }
+    public void kuole() {
+        if (kuollut == false) {
+            kuollut = true;
+        }
     }
 }

@@ -8,7 +8,7 @@ public class Petokala extends Kala {
 
     public void saalista(Kala saalis) {
         if (saalis.annettuKoko() < this.saalistusTeho) {
-            saalis.kuollut = true;
+            saalis.kuole();
     }
 }
 }

@@ -37,7 +37,8 @@ public class Kalastaja {
 
     /*
     Yrittää kalastaa parametrinä annetusta listasta kalan.
-    Kiinnijäädessä saalis lisätään Saalisraporttiin.
+    Kiinnijäädessä saalis lisätään Saalisraporttiin ja saalis
+    kuolee.
 
     AE: kalalista != null && onkoKuollut() == false
     */
@@ -48,6 +49,7 @@ public class Kalastaja {
             if (!eräs.onkoKuollut()) {
                 if (viehe.jaikoKiinni(eräs)) {
                     raportti.lisaaSaalis(eräs);
+                    eräs.kuole();
                 }
             }
         }
