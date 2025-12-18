@@ -1,5 +1,5 @@
 package Kala_lampi;
-public class Kasvi {
+public class Kasvi implements Kuolevainen{
     private double koko;
     private double kasvuNopeus;
     private boolean kuollut=false; 
@@ -17,5 +17,11 @@ public class Kasvi {
         if (this.koko < 0) {
             this.kuollut = true;
         }
+    }
+    public boolean onkoKuollut() {
+        return kuollut;
+    }
+    public void olionAktiviteetti() {
+        
     }
 }

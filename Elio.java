@@ -1,5 +1,5 @@
 package Kala_lampi;
-public class Elio {
+public class Elio implements Kuolevainen{
     public boolean kuollut=false;
     private double koko;
     public Elio(double koko) {
@@ -14,5 +14,8 @@ public class Elio {
     }
     public boolean onkoKuollut() {
         return kuollut;
+    }
+    public void olionAktiviteetti() {
+        
     }
 }
