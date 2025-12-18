@@ -14,4 +14,15 @@ public class Elio {
         this.koko += k.annettuKoko()/2;
         k.pienene(maara);
     }
+    public boolean onkoKuollut() {
+        return kuollut;
+    }
+    public void olionAktiviteetti() {
+        
+    }
+    public void kuole() {
+        if (kuollut == false) {
+            kuollut = true;
+        }
+    }
 }
