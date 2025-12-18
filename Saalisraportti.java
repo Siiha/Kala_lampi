@@ -6,7 +6,7 @@ public class Saalisraportti {
     /*
     Saalisraportin kalat.
     */
-    private ArrayList<Kala> saalis;
+    private ArrayList<Kuolevainen> saalis;
 
     /*
     Konstruktori saalisraportille.
@@ -24,7 +24,7 @@ public class Saalisraportti {
 
     AE: true
     */
-    public void lisaaSaalis(Kala saalis) {
+    public void lisaaSaalis(Kuolevainen saalis) {
         this.saalis.add(saalis);
     }
 }
