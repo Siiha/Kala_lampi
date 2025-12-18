@@ -32,11 +32,11 @@ public class Viehe {
         if (eräsKala != null) {
             int rng = (int)(Math.random() * 101);
             if (eräsKala.getClass().getSimpleName().equals("Petokala")) {
-                if (rng >= petokalaChance) {
+                if (rng <= petokalaChance) {
                     return true;
                 }
             } else {
-                if (rng >= saaliskalaChance) {
+                if (rng <= saaliskalaChance) {
                     return true;
                 }
             }
