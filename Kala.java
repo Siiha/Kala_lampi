@@ -6,6 +6,7 @@ public class Kala  extends Elio {
     public void syo(Elio saalis) {
         if (saalis.annettuKoko() < this.annettuKoko()) {
             saalis.kuollut=true;
+            this.koko += saalis.annettuKoko() / 100;
         }
     }}
     
