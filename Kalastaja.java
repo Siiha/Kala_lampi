@@ -42,10 +42,10 @@ public class Kalastaja {
 
     AE: kalalista != null && onkoKuollut() == false
     */
-    public void kalasta(ArrayList<Kala> kalalista) {
+    public void kalasta(ArrayList<Kuolevainen> kalalista) {
         if (kalalista != null) {
             int rng = (int)(Math.random() * kalalista.size());
-            Kala eräs = kalalista.get(rng);
+            Kuolevainen eräs = kalalista.get(rng);
             if (!eräs.onkoKuollut()) {
                 if (viehe.jaikoKiinni(eräs)) {
                     raportti.lisaaSaalis(eräs);

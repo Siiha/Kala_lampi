@@ -23,7 +23,7 @@ public class Viehe {
 
     AE: eräsKala != null
     */
-    public boolean jaikoKiinni(Kala eräsKala) {
+    public boolean jaikoKiinni(Kuolevainen eräsKala) {
         if (eräsKala != null) {
             int rng = (int)(Math.random() * 101);
             if (eräsKala.getClass().getSimpleName().equals("Petokala")) {
