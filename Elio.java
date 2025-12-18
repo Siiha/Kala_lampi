@@ -2,8 +2,10 @@ package Kala_lampi;
 public class Elio {
     public boolean kuollut=false;
     private double koko;
-    public Elio(double koko) {
+    private boolean sukupuoli; // true = naaras, false = uros
+    public Elio(double koko, boolean sukupuoli) {
         this.koko = koko;
+        this.sukupuoli = sukupuoli;
     }
     public double annettuKoko() {
         return this.koko;
