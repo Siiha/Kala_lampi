@@ -35,18 +35,44 @@ public class Vesistö {
         kalat = new ArrayList<>();
     }
 
-    // onkoKuollut() & olionAktiviteetti() placeholder nimet.
-
     /*
-    Edistää olioiden tilaa eteenpäin.
-    Ottaa vastaan parametrinä listan olioita.
+    Edistää eliöiden tilaa eteenpäin.
+    Ottaa vastaan parametrinä listan eliöitä.
 
     AE: onkoKuollut() != true
     */
-    private void olioidenAktiviteetti(ArrayList<Kuolevainen> oliolista) {
-        for (int counter = 0; counter < oliolista.size(); counter++) {
-            if (!oliolista.get(counter).onkoKuollut()) {
-                oliolista.get(counter).olionAktiviteetti();
+    private void elioidenAktiviteetti(ArrayList<Elio> eliolista) {
+        for (int counter = 0; counter < eliolista.size(); counter++) {
+            if (!eliolista.get(counter).onkoKuollut()) {
+                eliolista.get(counter).olionAktiviteetti();
+            }
+        }
+    }
+
+    /*
+    Edistää kasvien tilaa eteenpäin.
+    Ottaa vastaan parametrinä listan kasveja.
+
+    AE: onkoKuollut() != true
+    */
+    private void kasvienAktiviteetti(ArrayList<Kasvi> kasvilista) {
+        for (int counter = 0; counter < kasvilista.size(); counter++) {
+            if (!kasvilista.get(counter).onkoKuollut()) {
+                kasvilista.get(counter).olionAktiviteetti();
+            }
+        }
+    }
+
+    /*
+    Edistää kalojen tilaa eteenpäin.
+    Ottaa vastaan parametrinä listan kaloja.
+
+    AE: onkoKuollut() != true
+    */
+    private void kalojenAktiviteetti(ArrayList<Kala> kalalista) {
+        for (int counter = 0; counter < kalalista.size(); counter++) {
+            if (!kalalista.get(counter).onkoKuollut()) {
+                kalalista.get(counter).olionAktiviteetti();
             }
         }
     }
@@ -60,7 +86,9 @@ public class Vesistö {
     */
     public void eteneSimulaatiota(int kuukausiMäärä) {
         for (int counter = 0; counter < kuukausiMäärä; counter++) {
-            
+            elioidenAktiviteetti(eliöt);
+            kasvienAktiviteetti(kasvit);
+            kalojenAktiviteetti(kalat);
         }
     }
 }
