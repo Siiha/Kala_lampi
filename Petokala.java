@@ -8,7 +8,7 @@ public class Petokala extends Kala {
 
     public Petokala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit,ArrayList<Kala> Kala_saaliit) {
         super(koko,sukupuoli,saaliit);
-        this.saaliit.addAll(Kala_saaliit);
+        // this.saaliit.addAll(Kala_saaliit);
 
     }
 

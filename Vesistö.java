@@ -112,4 +112,31 @@ public class Vesistö {
             kalojenAktiviteetti(kalat);
         }
     }
+
+    public String kalatRaportti() {
+        String s = "Kalat vesistössä:\n";
+        for (Kala kala : kalat) {
+            s += kala.getClass().getSimpleName() + "n koko: " + kala.annettuKoko() + "\n";
+            s += "Onko kuollut: " + kala.onkoKuollut() + "\n";
+        }
+        return s;
+    }
+    
+    public String kasvitRaportti() {
+        String s = "Kasvit vesistössä:\n";
+        for (Kasvi kasvi : kasvit) {
+            s += "Koko: " + kasvi.annettuKoko() + "\n";
+            s += "Onko kuollut: " + kasvi.onkoKuollut() + "\n";
+        }
+        return s;
+    }
+
+    public String eliotRaportti() {
+        String s = "Eliöt vesistössä:\n";
+        for (Elio elio : eliöt) {
+            s += elio.getClass().getSimpleName() + "n koko: " + elio.annettuKoko() + "\n";
+            s += "Onko kuollut: " + elio.onkoKuollut() + "\n";
+        }
+        return s;
+    }
 }
