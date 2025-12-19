@@ -40,6 +40,11 @@ public class Elio implements Kuolevainen {
     public double annettuKoko() {
         return this.koko;
     }
+
+    public boolean onkoNaaras() {
+        return this.sukupuoli;
+    }
+
     public void syo(Kasvi k,double maara) {
         this.koko += k.annettuKoko()/2;
         k.pienene(maara);
@@ -48,7 +53,7 @@ public class Elio implements Kuolevainen {
         return kuollut;
     }
     public void olionAktiviteetti() {
-        
+
     }
     public void kuole() {
         if (kuollut == false) {

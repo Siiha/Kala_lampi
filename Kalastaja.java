@@ -50,6 +50,7 @@ public class Kalastaja {
                 if (viehe.jaikoKiinni(eräs)) {
                     raportti.lisaaSaalis(eräs);
                     eräs.kuole();
+                    kalalista.remove(eräs);
                 }
             }
         }
