@@ -18,8 +18,10 @@ public class Vesistö {
     */
     private ArrayList<Elio> eliöt;
 
-
-    // Kyseenalainen konstruktorin toteutusidea.
+    /*
+    Muuttuja kalastajalle.
+    */
+    private Kalastaja kalastaja;
 
     /*
     Luokan konstruktori.
@@ -33,6 +35,7 @@ public class Vesistö {
         eliöt = new ArrayList<>();
         kasvit = new ArrayList<>();
         kalat = new ArrayList<>();
+        kalastaja = new Kalastaja();
         
         for (int counter = 0; counter < elio; counter++) {
             Elio eräs = Elio.luoElio();
@@ -111,6 +114,17 @@ public class Vesistö {
             kasvienAktiviteetti(kasvit);
             kalojenAktiviteetti(kalat);
         }
+    }
+
+    /*
+    Kalastaja yrittää kalastaa vesistöstä.
+
+    AE: true
+    */
+    public void kalastajaKalastaa() {
+        kalastaja.kalasta(kalat);
+        kalastaja.kalasta(kalat);
+        System.out.println(kalastaja.haeRaportti());
     }
 
     public String kalatRaportti() {
