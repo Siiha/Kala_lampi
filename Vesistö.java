@@ -148,6 +148,9 @@ public class Vesistö {
         int lisaantyminenTodennäkoisyys = 30;
 
         for (Kala kala : kalat) {
+            if (kala instanceof Petokala) {
+                continue;
+            }
             if (!kala.onkoKuollut()) {
                 if (kala.onkoNaaras()) {
                     naarasLkm++;
@@ -206,10 +209,12 @@ public class Vesistö {
     */
     private void lisaantyminen() {
         if (kulunutAika >= 12) {
-            kulunutAika -= 12;
-            elioLisaantyminen();
-            kalaLisaantyminen();
-            petokalaLisaantyminen();
+            while (kulunutAika >= 12) {
+                elioLisaantyminen();
+                kalaLisaantyminen();
+                petokalaLisaantyminen();
+                kulunutAika -= 12;
+            }
         }
     }
 
