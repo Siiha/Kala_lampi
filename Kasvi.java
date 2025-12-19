@@ -6,6 +6,8 @@ public class Kasvi implements Kuolevainen {
     private double koko;
     private double kasvuNopeus;
     private boolean kuollut=false;
+    private static double minAlkuKoko = 5.0;
+    private static double maxAlkuKoko = 7.0;
     public Kasvi(double koko) {
         this.koko = koko;
     }
@@ -19,6 +21,17 @@ public class Kasvi implements Kuolevainen {
             Kuolleet.remove(id);
         }
     }
+
+    private static double arvoElionKoko() {
+        double koko = minAlkuKoko + (Math.random() * (maxAlkuKoko - minAlkuKoko));
+        return Math.round(koko * 10.0) / 10.0;
+    }
+
+    public static Kasvi luoKasvi() {
+        Kasvi eräs = new Kasvi(arvoElionKoko());
+        return eräs;
+    }
+
     public double annettuKoko() {
         return this.koko;
     }
