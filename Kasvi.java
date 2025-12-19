@@ -22,13 +22,13 @@ public class Kasvi implements Kuolevainen {
         }
     }
 
-    private static double arvoElionKoko() {
+    private static double arvoKasvinKoko() {
         double koko = minAlkuKoko + (Math.random() * (maxAlkuKoko - minAlkuKoko));
         return Math.round(koko * 10.0) / 10.0;
     }
 
     public static Kasvi luoKasvi() {
-        Kasvi eräs = new Kasvi(arvoElionKoko());
+        Kasvi eräs = new Kasvi(arvoKasvinKoko());
         return eräs;
     }
 
