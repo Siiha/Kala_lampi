@@ -54,4 +54,13 @@ public class Kalastaja {
             }
         }
     }
+
+    /*
+    Palauttaa kalastajan saalisraportin.
+
+    AE: true
+    */
+    public Saalisraportti haeRaportti() {
+        return this.raportti;
+    }
 }

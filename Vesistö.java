@@ -33,6 +33,27 @@ public class Vesistö {
         eliöt = new ArrayList<>();
         kasvit = new ArrayList<>();
         kalat = new ArrayList<>();
+        
+        for (int counter = 0; counter < elio; counter++) {
+            Elio eräs = Elio.luoElio();
+            eräs.asetaSaaliit(kasvit);
+            eliöt.add(eräs);
+        }
+
+        for (int counter = 0; counter < kasvi; counter++) {
+            Kasvi eräs = Kasvi.luoKasvi();
+            kasvit.add(eräs);
+        }
+
+        for (int counter = 0; counter < kala; counter++) {
+            Kala eräs = Kala.luoKala(eliöt);
+            kalat.add(eräs);
+        }
+
+        for (int counter = 0; counter < petokala; counter++) {
+            Petokala eräs = Petokala.luoPetokala(eliöt, kalat);
+            kalat.add(eräs);
+        }
     }
 
     /*

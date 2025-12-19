@@ -32,7 +32,7 @@ public class Elio implements Kuolevainen {
         return Math.round(koko * 10.0) / 10.0;
     }
 
-    public static Elio luoElio(ArrayList<Kasvi> saalislista) {
+    public static Elio luoElio() {
         Elio eräs = new Elio(arvoElionKoko(), arvoElionSukupuoli());
         return eräs;
     }
