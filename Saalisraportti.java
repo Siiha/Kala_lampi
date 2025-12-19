@@ -27,4 +27,12 @@ public class Saalisraportti {
     public void lisaaSaalis(Kala saalis) {
         this.saalis.add(saalis);
     }
+
+    public String toString() {
+        String s = "Saalisraportti:\n";
+        for (Kala kala : saalis) {
+            s += kala.getClass().getSimpleName() + "n koko: " + kala.annettuKoko() + "\n";
+        }
+        return s;
+    }
 }
