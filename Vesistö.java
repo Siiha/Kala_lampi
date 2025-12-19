@@ -24,6 +24,12 @@ public class Vesistö {
     private Kalastaja kalastaja;
 
     /*
+    Muuttuja simulaation kuluneelle ajalle.
+    Käytetään lisääntymisen seurantaan.
+    */
+    private int kulunutAika = 0;
+
+    /*
     Luokan konstruktori.
     Ottaa vastaan parametreinä luotavien olioiden määrät.
 
@@ -102,6 +108,112 @@ public class Vesistö {
     }
 
     /*
+    Luo uusia eliöitä vesistöön.
+
+    AE: true
+    */
+    private void elioLisaantyminen() {
+        int urosLkm = 0;
+        int naarasLkm = 0;
+        int lisaantyminenTodennäkoisyys = 50;
+
+        for (Elio elio : eliöt) {
+            if (!elio.onkoKuollut()) {
+                if (elio.onkoNaaras()) {
+                    naarasLkm++;
+                } else {
+                    urosLkm++;
+                }
+            }
+        }
+        int parit = Math.min(urosLkm, naarasLkm);
+        for (int counter = 0; counter < parit; counter++) {
+            int rng = (int)(Math.random() * 100);
+            if (rng < lisaantyminenTodennäkoisyys) {
+                Elio eräs = Elio.luoElio();
+                eräs.asetaSaaliit(kasvit);
+                eliöt.add(eräs);
+            }
+        }
+    }
+
+    /*
+    Lisää uusia kaloja vesistöön.
+
+    AE: true
+    */
+    private void kalaLisaantyminen() {
+        int urosLkm = 0;
+        int naarasLkm = 0;
+        int lisaantyminenTodennäkoisyys = 30;
+
+        for (Kala kala : kalat) {
+            if (!kala.onkoKuollut()) {
+                if (kala.onkoNaaras()) {
+                    naarasLkm++;
+                } else {
+                    urosLkm++;
+                }
+            }
+        }
+        int parit = Math.min(urosLkm, naarasLkm);
+        for (int counter = 0; counter < parit; counter++) {
+            int rng = (int)(Math.random() * 100);
+            if (rng < lisaantyminenTodennäkoisyys) {
+                Kala eräs = Kala.luoKala(eliöt);
+                kalat.add(eräs);
+            }
+        }
+        
+    }
+
+    /*
+    Lisää uusia petokaloja vesistöön.
+
+    AE: true
+    */
+    private void petokalaLisaantyminen() {
+        int urosLkm = 0;
+        int naarasLkm = 0;
+        int lisaantyminenTodennäkoisyys = 20;
+
+        for (Kala kala : kalat) {
+            if (kala instanceof Petokala) {
+                if (!kala.onkoKuollut()) {
+                    if (kala.onkoNaaras()) {
+                        naarasLkm++;
+                    } else {
+                        urosLkm++;
+                    }
+                }
+            }
+        }
+        int parit = Math.min(urosLkm, naarasLkm);
+        for (int counter = 0; counter < parit; counter++) {
+            int rng = (int)(Math.random() * 100);
+            if (rng < lisaantyminenTodennäkoisyys) {
+                Petokala eräs = Petokala.luoPetokala(eliöt, kalat);
+                kalat.add(eräs);
+            }
+        }
+        
+    }
+
+    /*
+    Yrittää lisätä uusia eliöitä vesistöön.
+
+    AE: kulunutAika >= 12
+    */
+    private void lisaantyminen() {
+        if (kulunutAika >= 12) {
+            kulunutAika -= 12;
+            elioLisaantyminen();
+            kalaLisaantyminen();
+            petokalaLisaantyminen();
+        }
+    }
+
+    /*
     Simulaatio siirtyy eteenpäin.
     
     Ottaa vastaan parametrinä kuukausien määrän.
@@ -109,11 +221,13 @@ public class Vesistö {
     AE: true
     */
     public void eteneSimulaatiota(int kuukausiMäärä) {
+        kulunutAika += kuukausiMäärä;
         for (int counter = 0; counter < kuukausiMäärä; counter++) {
             elioidenAktiviteetti(eliöt);
             kasvienAktiviteetti(kasvit);
             kalojenAktiviteetti(kalat);
         }
+        lisaantyminen();
     }
 
     /*
