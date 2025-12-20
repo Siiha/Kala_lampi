@@ -1,8 +1,9 @@
 package Kala_lampi;
 
 import java.util.ArrayList;
-
+import java.util.Random;
 public class Vesistö {
+    private Random rd = new Random();
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
@@ -130,6 +131,9 @@ public class Vesistö {
 
     AE: true
     */
+   private int random100() {
+        return rd.nextInt(100);
+    }
     private void elioLisaantyminen() {
         int urosLkm = 0;
         int naarasLkm = 0;
@@ -146,7 +150,7 @@ public class Vesistö {
         }
         int parit = Math.min(urosLkm, naarasLkm);
         for (int counter = 0; counter < parit; counter++) {
-            int rng = (int)(Math.random() * 100);
+            int rng = random100();
             if (rng < lisaantyminenTodennäkoisyys) {
                 Elio eräs = Elio.luoElio();
                 eräs.asetaKasvit(kasvit);
@@ -179,7 +183,7 @@ public class Vesistö {
         }
         int parit = Math.min(urosLkm, naarasLkm);
         for (int counter = 0; counter < parit; counter++) {
-            int rng = (int)(Math.random() * 100);
+            int rng = random100();
             if (rng < lisaantyminenTodennäkoisyys) {
                 Kala eräs = Kala.luoKala(eliöt);
                 kalat.add(eräs);
@@ -211,7 +215,7 @@ public class Vesistö {
         }
         int parit = Math.min(urosLkm, naarasLkm);
         for (int counter = 0; counter < parit; counter++) {
-            int rng = (int)(Math.random() * 100);
+            int rng = random100();
             if (rng < lisaantyminenTodennäkoisyys) {
                 Petokala eräs = Petokala.luoPetokala(eliöt, kalat);
                 kalat.add(eräs);
