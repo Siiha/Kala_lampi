@@ -2,6 +2,7 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Petokala extends Kala {
+    private static Random rd = new Random();
     private static double minAlkuKoko = 12.0;
     private static double maxAlkuKoko = 15.0;
     protected ArrayList<Kala> Kala_saaliit;
@@ -11,7 +12,7 @@ public class Petokala extends Kala {
     }
 
     private static double arvoElionKoko() {
-        double koko = minAlkuKoko + (Math.random() * (maxAlkuKoko - minAlkuKoko));
+        double koko = minAlkuKoko + (rd.nextDouble() * (maxAlkuKoko - minAlkuKoko));
         return Math.round(koko * 10.0) / 10.0;
     }
 
