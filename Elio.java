@@ -1,12 +1,13 @@
 package Kala_lampi;
 
 import java.util.ArrayList;
-
+import java.util.Random;
 public class Elio implements Kuolevainen {
     public boolean kuollut=false;
     protected double koko;
     protected boolean sukupuoli; // true = naaras, false = uros
-    private ArrayList<Kasvi> saaliit;
+    protected Random rd = new Random(); 
+    private ArrayList<Kasvi> kasvit;
     private static double minAlkuKoko = 5.0;
     private static double maxAlkuKoko = 7.0;
 
@@ -15,8 +16,8 @@ public class Elio implements Kuolevainen {
         this.sukupuoli = sukupuoli;
     }
 
-    public void asetaSaaliit(ArrayList<Kasvi> saaliit) {
-        this.saaliit = saaliit;
+    public void asetaKasvit(ArrayList<Kasvi> kasvit) {
+        this.kasvit = kasvit;
     }
 
     protected static boolean arvoElionSukupuoli() {
@@ -45,9 +46,10 @@ public class Elio implements Kuolevainen {
         return this.sukupuoli;
     }
 
-    public void syo(Kasvi k,double maara) {
+    public void syo() {
+        Kasvi k = kasvit.get(rd.nextInt(kasvit.size()));
         this.koko += k.annettuKoko()/2;
-        k.pienene(maara);
+        k.pienene(1.0);
     }
     public boolean onkoKuollut() {
         return kuollut;
