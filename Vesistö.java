@@ -3,11 +3,13 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Vesistö {
-    private Random rd = new Random();
+    /*
+    Muuttuja satunnaislukugeneraattorille.
+    */
+    private static Random rd = new Random();
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
-   private static Random rd = new Random();
     private ArrayList<Kala> kalat;
 
     /*
