@@ -7,6 +7,7 @@ public class Vesistö {
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
+   private static Random rd = new Random();
     private ArrayList<Kala> kalat;
 
     /*
@@ -112,6 +113,7 @@ public class Vesistö {
 
     AE: kalalista != null
     */
+   
     private void kalojenAktiviteetti(ArrayList<Kala> kalalista) {
         if (kalalista != null) {
             for (int counter = 0; counter < kalalista.size(); counter++) {
