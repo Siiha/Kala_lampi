@@ -19,6 +19,11 @@ public class Vesistö {
     private ArrayList<Elio> eliöt;
 
     /*
+    Muuttuja kuolleille kaloille.
+    */
+    private ArrayList<Kala> kuolleetKalat;
+
+    /*
     Muuttuja kalastajalle.
     */
     private Kalastaja kalastaja;
@@ -41,6 +46,7 @@ public class Vesistö {
         eliöt = new ArrayList<>();
         kasvit = new ArrayList<>();
         kalat = new ArrayList<>();
+        kuolleetKalat = new ArrayList<>();
         kalastaja = new Kalastaja();
         
         for (int counter = 0; counter < elio; counter++) {
@@ -50,7 +56,7 @@ public class Vesistö {
         }
 
         for (int counter = 0; counter < kasvi; counter++) {
-            Kasvi eräs = Kasvi.luoKasvi();
+            Kasvi eräs = Kasvi.luoKasvi(kuolleetKalat);
             kasvit.add(eräs);
         }
 
@@ -97,14 +103,20 @@ public class Vesistö {
     Edistää kalojen tilaa eteenpäin.
     Ottaa vastaan parametrinä listan kaloja.
 
-    AE: onkoKuollut() != true
+    AE: kalalista != null
     */
     private void kalojenAktiviteetti(ArrayList<Kala> kalalista) {
-        for (int counter = 0; counter < kalalista.size(); counter++) {
-            if (!kalalista.get(counter).onkoKuollut()) {
-                kalalista.get(counter).olionAktiviteetti();
+        if (kalalista != null) {
+            for (int counter = 0; counter < kalalista.size(); counter++) {
+                Kala eräs = kalalista.get(counter);
+                if (!eräs.onkoKuollut()) {
+                    eräs.olionAktiviteetti();
+                } else {
+                    kuolleetKalat.add(eräs);
+                    kalalista.remove(eräs);
+                }
             }
-        }
+        }  
     }
 
     /*
@@ -231,8 +243,8 @@ public class Vesistö {
             elioidenAktiviteetti(eliöt);
             kasvienAktiviteetti(kasvit);
             kalojenAktiviteetti(kalat);
+            lisaantyminen();
         }
-        lisaantyminen();
     }
 
     /*
