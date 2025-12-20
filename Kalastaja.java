@@ -1,8 +1,9 @@
 package Kala_lampi;
 
 import java.util.ArrayList;
-
+import java.util.Random;
 public class Kalastaja {
+    private static Random rd = new Random();
     /*
     Muuttuja kalastajan valitsemalle vieheelle.
     */
@@ -44,7 +45,7 @@ public class Kalastaja {
     */
     public void kalasta(ArrayList<Kala> kalalista) {
         if (kalalista != null) {
-            int rng = (int)(Math.random() * kalalista.size());
+            int rng = rd.nextInt(kalalista.size());
             Kala eräs = kalalista.get(rng);
             if (!eräs.onkoKuollut()) {
                 if (viehe.jaikoKiinni(eräs)) {

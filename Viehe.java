@@ -1,6 +1,7 @@
 package Kala_lampi;
-
+import java.util.Random;
 public class Viehe {
+    private static Random rd = new Random();
     /*
     Todennäköisyys saaliskalan ja petokalan kiinnijäämiseen.
     */
@@ -25,7 +26,7 @@ public class Viehe {
     */
     public boolean jaikoKiinni(Kala eräsKala) {
         if (eräsKala != null) {
-            int rng = (int)(Math.random() * 101);
+            int rng = rd.nextInt(100) + 1;
             if (eräsKala.getClass().getSimpleName().equals("Petokala")) {
                 if (rng <= petokalaChance) {
                     return true;

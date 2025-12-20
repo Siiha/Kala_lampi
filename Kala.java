@@ -2,6 +2,7 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Kala  extends Elio {
+    private static Random rd = new Random();
     /*
     Muuttuja kalan mahdollisille saaliille.
     */
@@ -56,7 +57,7 @@ public class Kala  extends Elio {
     */
     public void syo() {
         int ss = saaliit.size();
-        Random rd = new Random();
+        
         if (ss == 0) {
             return;
         }
