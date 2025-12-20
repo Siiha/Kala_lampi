@@ -4,7 +4,6 @@ import java.util.Random;
 public class Petokala extends Kala {
     private static double minAlkuKoko = 12.0;
     private static double maxAlkuKoko = 15.0;
-    private Random rd = new Random();
     protected ArrayList<Kala> Kala_saaliit;
     public Petokala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit,ArrayList<Kala> Kala_saaliit) {
         super(koko,sukupuoli,saaliit);

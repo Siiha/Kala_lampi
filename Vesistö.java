@@ -45,7 +45,7 @@ public class Vesistö {
         
         for (int counter = 0; counter < elio; counter++) {
             Elio eräs = Elio.luoElio();
-            eräs.asetaSaaliit(kasvit);
+            eräs.asetaKasvit(kasvit);
             eliöt.add(eräs);
         }
 
@@ -131,7 +131,7 @@ public class Vesistö {
             int rng = (int)(Math.random() * 100);
             if (rng < lisaantyminenTodennäkoisyys) {
                 Elio eräs = Elio.luoElio();
-                eräs.asetaSaaliit(kasvit);
+                eräs.asetaKasvit(kasvit);
                 eliöt.add(eräs);
             }
         }

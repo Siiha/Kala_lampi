@@ -11,7 +11,7 @@ public class Kasvi implements Kuolevainen {
     public Kasvi(double koko) {
         this.koko = koko;
     }
-    public void kasva(ArrayList<Elio> Kuolleet) {
+    public void kasva(ArrayList<Kala> Kuolleet) {
         int Kks = Kuolleet.size();
         if (Kks > 0){
             Random rd = new Random();
