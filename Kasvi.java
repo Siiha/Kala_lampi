@@ -115,7 +115,7 @@ public class Kasvi implements Kuolevainen {
     }
 
     /*
-    Simulaatiolle tarjottu metodi olion tilan edistämiseen.
+    Simulaatiolle tarjottu metodi kasvin tilan edistämiseen.
 
     AE: true
     */
