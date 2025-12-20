@@ -284,4 +284,12 @@ public class Vesistö {
         }
         return s;
     }
+
+    public String kuolleetRaportti() {
+        String s = "Kuolleet kalat vesistössä:\n";
+        for (Kala kala : kuolleetKalat) {
+            s += kala.getClass().getSimpleName() + "n koko: " + kala.annettuKoko() + "\n";
+        }
+        return s;
+    }
 }
