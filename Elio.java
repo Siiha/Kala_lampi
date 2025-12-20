@@ -3,7 +3,7 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Elio implements Kuolevainen {
-    private boolean kuollut=false;
+    protected boolean kuollut=false;
     protected double koko;
     protected boolean sukupuoli; // true = naaras, false = uros
     protected Random rd = new Random(); 
