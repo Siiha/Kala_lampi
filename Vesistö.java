@@ -270,6 +270,17 @@ public class Vesistö {
         System.out.println(kalastaja.haeRaportti());
     }
 
+    /*
+    Asettaa kalastajalle parametrina saadun vieheen.
+
+    AE: viehe != null
+    */
+    public void asetaViehe(Viehe viehe) {
+        if (viehe != null) {
+            kalastaja.valitseViehe(viehe);
+        }
+    }
+
     public String kalatRaportti() {
         String s = "Kalat vesistössä:\n";
         for (Kala kala : kalat) {

@@ -41,8 +41,9 @@ public class Main {
             System.out.println("Valitse toiminto:");
             System.out.println("1 - Etene simulaatiota");
             System.out.println("2 - Kalastaja kalastaa");
-            System.out.println("3 - Tulosta raportti");
-            System.out.println("4 - Nollaa vesistö");
+            System.out.println("3 - Aseta kalastajan viehe");
+            System.out.println("4 - Tulosta raportti");
+            System.out.println("5 - Nollaa vesistö");
             System.out.println("0 - Lopeta ohjelma");
             String line = lukija.nextLine().trim();
             try {
@@ -61,12 +62,15 @@ public class Main {
                     vesistö.kalastajaKalastaa();
                     break;
                 case 3:
+                    valitseViehe();
+                    break;
+                case 4:
                     System.out.println(vesistö.kalatRaportti());
                     System.out.println(vesistö.kasvitRaportti());
                     System.out.println(vesistö.eliotRaportti());
                     System.out.println(vesistö.kuolleetRaportti());
                     break;
-                case 4:
+                case 5:
                     nollaaVesisto();
                     System.out.println("Vesistö nollattu.");
                     break;
@@ -132,6 +136,47 @@ public class Main {
             } catch (NumberFormatException e) {
                 System.out.println("Virheellinen syöte. Yritä uudelleen.");
             }
+        }
+    }
+
+    /*
+    Vieheen valintametodi.
+
+    AE: true
+    */
+    private static void valitseViehe() {
+        System.out.println("Valitse viehe kalastajalle:");
+        System.out.println("1 - Perusviehe");
+        System.out.println("2 - Saaliskalan viehe");
+        System.out.println("3 - Petokalan viehe");
+        String line = lukija.nextLine().trim();
+        int valinta;
+        try {
+            valinta = Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            valinta = -1;
+        }
+        Viehe viehe;
+        switch (valinta) {
+            case 1:
+                viehe = new Viehe();
+                vesistö.asetaViehe(viehe);
+                System.out.println("Perusviehe valittu.");
+                break;
+            case 2:
+                viehe = new Saalisviehe();
+                vesistö.asetaViehe(viehe);
+                System.out.println("Saaliskalan viehe valittu.");
+                break;
+            case 3:
+                viehe = new Petoviehe();
+                vesistö.asetaViehe(viehe);
+                System.out.println("Petokalan viehe valittu.");
+                break;
+            default:
+                viehe = new Viehe();
+                vesistö.asetaViehe(viehe);
+                System.out.println("Virheellinen valinta. Perusviehe asetettu.");
         }
     }
 }
