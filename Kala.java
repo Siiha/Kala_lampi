@@ -33,5 +33,9 @@ public class Kala  extends Elio {
             this.koko += saalis.annettuKoko() / 100;
         }
     }
+
+    public void olionAktiviteetti() {
+        syo();
+    }
 }
     

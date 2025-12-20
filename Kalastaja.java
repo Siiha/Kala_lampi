@@ -50,8 +50,18 @@ public class Kalastaja {
                 if (viehe.jaikoKiinni(eräs)) {
                     raportti.lisaaSaalis(eräs);
                     eräs.kuole();
+                    kalalista.remove(eräs);
                 }
             }
         }
+    }
+
+    /*
+    Palauttaa kalastajan saalisraportin.
+
+    AE: true
+    */
+    public Saalisraportti haeRaportti() {
+        return this.raportti;
     }
 }
