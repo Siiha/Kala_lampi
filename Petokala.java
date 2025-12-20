@@ -2,14 +2,12 @@ package Kala_lampi;
 import java.util.ArrayList;
 
 public class Petokala extends Kala {
-
     private static double minAlkuKoko = 12.0;
     private static double maxAlkuKoko = 15.0;
 
     public Petokala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit,ArrayList<Kala> Kala_saaliit) {
         super(koko,sukupuoli,saaliit);
-        // this.saaliit.addAll(Kala_saaliit);
-
+        this.saaliit = Kala_saaliit;
     }
 
     private static double arvoElionKoko() {
