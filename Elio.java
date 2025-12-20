@@ -3,7 +3,7 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Elio implements Kuolevainen {
-    public boolean kuollut=false;
+    private boolean kuollut=false;
     protected double koko;
     protected boolean sukupuoli; // true = naaras, false = uros
     protected Random rd = new Random(); 
@@ -11,7 +11,7 @@ public class Elio implements Kuolevainen {
     private static double minAlkuKoko = 5.0;
     private static double maxAlkuKoko = 7.0;
 
-    public Elio(double koko, boolean sukupuoli) {
+    protected Elio(double koko, boolean sukupuoli) {
         this.koko = koko;
         this.sukupuoli = sukupuoli;
     }

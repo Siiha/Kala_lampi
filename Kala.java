@@ -5,7 +5,7 @@ public class Kala  extends Elio {
     protected ArrayList<Elio> saaliit; // lista mahdollisista eliöistä joita kala voi syödä
     private static double minAlkuKoko = 8.0;
     private static double maxAlkuKoko = 10.0;
-    public Kala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit) {
+    protected Kala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit) {
         super(koko, sukupuoli);
         this.saaliit = saaliit;
     }
@@ -29,8 +29,9 @@ public class Kala  extends Elio {
         int id = rd.nextInt(ss); 
         Elio saalis = saaliit.get(id);
         if (saalis.annettuKoko() < this.annettuKoko()) {
-            saalis.kuollut=true;
+            saalis.kuole();
             this.koko += saalis.annettuKoko() / 100;
+            saaliit.remove(saalis);
         }
     }
 

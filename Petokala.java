@@ -6,7 +6,7 @@ public class Petokala extends Kala {
     private static double minAlkuKoko = 12.0;
     private static double maxAlkuKoko = 15.0;
     protected ArrayList<Kala> Kala_saaliit;
-    public Petokala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit,ArrayList<Kala> Kala_saaliit) {
+    protected Petokala(double koko, boolean sukupuoli, ArrayList<Elio> saaliit,ArrayList<Kala> Kala_saaliit) {
         super(koko,sukupuoli,saaliit);
         this.Kala_saaliit = Kala_saaliit;
     }
@@ -29,7 +29,6 @@ public class Petokala extends Kala {
             if (kala.annettuKoko() < this.annettuKoko()){
             this.koko += kala.annettuKoko() / 100;
             kala.kuole();
-            Kala_saaliit.remove(id);
         }
     }
 }
