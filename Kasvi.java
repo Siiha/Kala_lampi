@@ -10,7 +10,7 @@ public class Kasvi implements Kuolevainen {
     private static double minAlkuKoko = 5.0;
     private static double maxAlkuKoko = 7.0;
 
-    public Kasvi(double koko, ArrayList<Kala> ravinto) {
+    private Kasvi(double koko, ArrayList<Kala> ravinto) {
         this.koko = koko;
         this.ravinto = ravinto;
     }

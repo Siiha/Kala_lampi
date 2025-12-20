@@ -75,28 +75,34 @@ public class Vesistö {
     Edistää eliöiden tilaa eteenpäin.
     Ottaa vastaan parametrinä listan eliöitä.
 
-    AE: onkoKuollut() != true
+    AE: eliolista != null && onkoKuollut() == false
     */
     private void elioidenAktiviteetti(ArrayList<Elio> eliolista) {
-        for (int counter = 0; counter < eliolista.size(); counter++) {
-            if (!eliolista.get(counter).onkoKuollut()) {
-                eliolista.get(counter).olionAktiviteetti();
-            }
+        if (eliolista != null) {
+            for (int counter = 0; counter < eliolista.size(); counter++) {
+                if (!eliolista.get(counter).onkoKuollut()) {
+                    eliolista.get(counter).olionAktiviteetti();
+                }
         }
+        }
+
     }
 
     /*
     Edistää kasvien tilaa eteenpäin.
     Ottaa vastaan parametrinä listan kasveja.
 
-    AE: onkoKuollut() != true
+    AE: kasvilista != null && onkoKuollut() == false
     */
     private void kasvienAktiviteetti(ArrayList<Kasvi> kasvilista) {
-        for (int counter = 0; counter < kasvilista.size(); counter++) {
-            if (!kasvilista.get(counter).onkoKuollut()) {
-                kasvilista.get(counter).olionAktiviteetti();
-            }
+        if (kasvilista != null) {
+            for (int counter = 0; counter < kasvilista.size(); counter++) {
+                if (!kasvilista.get(counter).onkoKuollut()) {
+                    kasvilista.get(counter).olionAktiviteetti();
+                }
         }
+        }
+
     }
 
     /*
