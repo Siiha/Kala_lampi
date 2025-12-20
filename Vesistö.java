@@ -6,7 +6,7 @@ public class Vesistö {
     /*
     Muuttuja satunnaislukugeneraattorille.
     */
-    private Random rd = new Random();
+    private static Random rd = new Random();
     /*
     Muuttuja saalis- ja petokalojen listalle.
     */
