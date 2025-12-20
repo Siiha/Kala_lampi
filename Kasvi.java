@@ -11,7 +11,6 @@ public class Kasvi implements Kuolevainen {
     private static double maxAlkuKoko = 7.0;
 
     public Kasvi(double koko, ArrayList<Kala> ravinto) {
-        ravinto = new ArrayList<>();
         this.koko = koko;
         this.ravinto = ravinto;
     }
