@@ -5,20 +5,24 @@ import java.util.Random;
 public class Kasvi implements Kuolevainen {
     private double koko;
     private double kasvuNopeus;
+    private ArrayList<Kala> ravinto;
     private boolean kuollut=false;
     private static double minAlkuKoko = 5.0;
     private static double maxAlkuKoko = 7.0;
-    public Kasvi(double koko) {
+
+    public Kasvi(double koko, ArrayList<Kala> ravinto) {
+        ravinto = new ArrayList<>();
         this.koko = koko;
+        this.ravinto = ravinto;
     }
-    public void kasva(ArrayList<Elio> Kuolleet) {
-        int Kks = Kuolleet.size();
+    public void kasva() {
+        int Kks = ravinto.size();
         if (Kks > 0){
             Random rd = new Random();
             int id = rd.nextInt(Kks); 
-            Elio elio = Kuolleet.get(id);
+            Elio elio = ravinto.get(id);
             this.koko += elio.annettuKoko() / 10;
-            Kuolleet.remove(id);
+            ravinto.remove(id);
         }
     }
 
@@ -27,8 +31,8 @@ public class Kasvi implements Kuolevainen {
         return Math.round(koko * 10.0) / 10.0;
     }
 
-    public static Kasvi luoKasvi() {
-        Kasvi eräs = new Kasvi(arvoKasvinKoko());
+    public static Kasvi luoKasvi(ArrayList<Kala> ravinto) {
+        Kasvi eräs = new Kasvi(arvoKasvinKoko(), ravinto);
         return eräs;
     }
 
@@ -45,7 +49,7 @@ public class Kasvi implements Kuolevainen {
         return kuollut;
     }
     public void olionAktiviteetti() {
-        
+        kasva();
     }
     public void kuole() {
         if (kuollut == false) {
