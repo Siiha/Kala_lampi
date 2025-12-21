@@ -41,19 +41,22 @@ public class Kalastaja {
     Kiinnijäädessä saalis lisätään Saalisraporttiin ja saalis
     kuolee.
 
-    AE: kalalista != null && onkoKuollut() == false
+    AE: kalalista != null && kalalista.size() > 0 && onkoKuollut() == false
     */
     public void kalasta(ArrayList<Kala> kalalista) {
         if (kalalista != null) {
-            int rng = rd.nextInt(kalalista.size());
-            Kala eräs = kalalista.get(rng);
-            if (!eräs.onkoKuollut()) {
-                if (viehe.jaikoKiinni(eräs)) {
-                    raportti.lisaaSaalis(eräs);
-                    eräs.kuole();
-                    kalalista.remove(eräs);
+            if (kalalista.size() > 0) {
+                int rng = rd.nextInt(kalalista.size());
+                Kala eräs = kalalista.get(rng);
+                if (!eräs.onkoKuollut()) {
+                    if (viehe.jaikoKiinni(eräs)) {
+                        raportti.lisaaSaalis(eräs);
+                        eräs.kuole();
+                        kalalista.remove(eräs);
+                    }
                 }
             }
+            
         }
     }
 
