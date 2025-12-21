@@ -113,12 +113,18 @@ public class Elio implements Kuolevainen {
     /*
     Syö kasvia kasvilistasta.
 
-    AE: true
+    AE: kasvit.size() > 0 && onkoKuollut() == false
     */
     public void syo() {
-        Kasvi k = kasvit.get(rd.nextInt(kasvit.size()));
-        this.koko += k.annettuKoko()/2;
-        k.pienene(1.0);
+        if (kasvit.size() > 0) {
+            Kasvi k = kasvit.get(rd.nextInt(kasvit.size()));
+            if (!k.onkoKuollut()) {
+                this.koko += k.annettuKoko()/2;
+                k.pienene(1.0);
+            }
+            
+        }
+
     }
 
     /*
