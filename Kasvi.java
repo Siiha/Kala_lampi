@@ -3,6 +3,7 @@ package Kala_lampi;
 import java.util.ArrayList;
 import java.util.Random;
 public class Kasvi implements Kuolevainen {
+    private static Random rd = new Random();
     /*
     Muuttuja kasvin koolle.
     */
@@ -54,7 +55,6 @@ public class Kasvi implements Kuolevainen {
     public void kasva() {
         int Kks = ravinto.size();
         if (Kks > 0){
-            Random rd = new Random();
             int id = rd.nextInt(Kks); 
             Elio elio = ravinto.get(id);
             this.koko += elio.annettuKoko() / 10;
@@ -68,7 +68,7 @@ public class Kasvi implements Kuolevainen {
     AE: true
     */
     private static double arvoKasvinKoko() {
-        double koko = minAlkuKoko + (Math.random() * (maxAlkuKoko - minAlkuKoko));
+        double koko = minAlkuKoko + (rd.nextDouble() * (maxAlkuKoko - minAlkuKoko));
         return Math.round(koko * 10.0) / 10.0;
     }
 
